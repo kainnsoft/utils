@@ -1,7 +1,23 @@
 package utils
 
-func TrimToDigit(str string) int {
-	return 0
+import (
+	"fmt"
+	"strconv"
+	"unicode"
+)
+
+func TrimToDigit(str string) (int, error) {
+	var resultStr string
+	for _, v := range str {
+		if unicode.IsDigit(v) {
+			resultStr += string(v)
+		}
+	}
+	retInt, err := strconv.Atoi(resultStr)
+	if err != nil {
+		return 0, fmt.Errorf("convertation \"%s\" to int failed due to error: %v", str, err)
+	}
+	return retInt, nil
 }
 
 // rebrain tests
