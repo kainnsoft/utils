@@ -1,5 +1,9 @@
 package utils
 
+func TrimToDigit(str string) int {
+	return 0
+}
+
 // rebrain tests
 func InSlice(a []string, x string) bool {
 	for _, n := range a { //
@@ -10,11 +14,8 @@ func InSlice(a []string, x string) bool {
 	return false
 }
 
-<<<<<<< HEAD
 // rebrain tests
-=======
 func InSliceInt(a []int, x int) bool {
->>>>>>> master
 	for _, n := range a {
 		if x == n {
 			return true
