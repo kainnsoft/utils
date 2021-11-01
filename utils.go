@@ -1,5 +1,6 @@
 package utils
 
+// rebrain tests
 func InSlice(a []string, x string) bool {
 	for _, n := range a { //
 		if x == n {
@@ -9,6 +10,7 @@ func InSlice(a []string, x string) bool {
 	return false
 }
 
+// rebrain tests
 func ContainsInt(a []int, x int) bool {
 	for _, n := range a {
 		if x == n {
