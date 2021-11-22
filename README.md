@@ -1,6 +1,6 @@
 # utils
 
-Всё началось как тесты при обучении на Rebrain.
+Библиотека go
 
 Ветка github.com/kainnsoft/utils имеет версии 
   - v1.0.0
