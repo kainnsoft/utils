@@ -39,3 +39,14 @@ func InSliceInt(a []int, x int) bool {
 	}
 	return false
 }
+
+// if slice of runes is palindrome returns TRUE, else returns FALSE
+func IsPalindrome(runes []rune) bool {
+	lenth := len(runes)
+	for i := 0; i < lenth/2; i++ {
+		if runes[i] != runes[lenth-i-1] {
+			return false
+		}
+	}
+	return true
+}
