@@ -20,26 +20,6 @@ func TrimToDigit(str string) (int, error) {
 	return retInt, nil
 }
 
-// rebrain tests
-func InSlice(a []string, x string) bool {
-	for _, n := range a { //
-		if x == n {
-			return true
-		}
-	}
-	return false
-}
-
-// rebrain tests
-func InSliceInt(a []int, x int) bool {
-	for _, n := range a {
-		if x == n {
-			return true
-		}
-	}
-	return false
-}
-
 // if slice of runes is palindrome returns TRUE, else returns FALSE
 func IsPalindrome(runes []rune) bool {
 	lenth := len(runes)
@@ -50,3 +30,19 @@ func IsPalindrome(runes []rune) bool {
 	}
 	return true
 }
+
+// Reverse strings, including such:
+// `Hello ыыы
+//   world! @[ъ]`
+func reverceString(input string) (output string) {
+	runeInput := []rune(input)
+	runeLen := len(runeInput)
+	outputRune := make([]rune, runeLen)
+
+	for k, v := range runeInput {
+		outputRune[runeLen-k-1] = v
+	}
+	output = string(outputRune)
+	return
+}
+
