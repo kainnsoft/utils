@@ -48,7 +48,7 @@ func reverceString(input string) (output string) {
 
 ///////////////////////////////////////////////////
 // AsyncFib
-func main_analogue() {
+func AsyncFib_main_analogue() {
 	c := make(chan int, 3)
 	quit := make(chan struct{})
 	go func() {
