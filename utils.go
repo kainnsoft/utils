@@ -46,3 +46,29 @@ func reverceString(input string) (output string) {
 	return
 }
 
+///////////////////////////////////////////////////
+// AsyncFib
+func main_analogue() {
+	c := make(chan int, 3)
+	quit := make(chan struct{})
+	go func() {
+		for i := 0; i < 10; i++ {
+			fmt.Println(<-c)
+		}
+		quit <- struct{}{}
+	}()
+	asyncFib(c, quit)
+}
+
+func asyncFib(c chan int, q chan struct{}) {
+	x, y := 0, 1
+	for {
+		select {
+		case c <- x:
+			x, y = y, x+y
+		case <-q:
+			fmt.Println("Quit")
+			return
+		}
+	}
+}
